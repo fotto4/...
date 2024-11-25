@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI Erklärung</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Künstliche Intelligenz Erklärt</h1>
+        <nav>
+            <ul>
+                <li><a href="alltag.html">KI im Alltag</a></li>
+                <li><a href="vor-und-nachteile.html">Vor- und Nachteile</a></li>
+                <li><a href="komplexitaet.html">KI-Komplexität</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    Was ist KI?
+                    <span class="accordion-icon">&#9660;</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Künstliche Intelligenz (KI) ist ein Zweig der Informatik, der sich mit der Entwicklung von Computersystemen befasst, die Aufgaben ausführen können, die normalerweise menschliche Intelligenz erfordern. Dazu gehören Lernen, Problemlösung, Mustererkennung und Entscheidungsfindung.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    Wie funktioniert KI?
+                    <span class="accordion-icon">&#9660;</span>
+                </button>
+                <div class="accordion-content">
+                    <p>KI funktioniert durch die Verwendung von Algorithmen und Datenstrukturen, die es Computern ermöglichen, aus Erfahrungen zu lernen, sich an neue Eingaben anzupassen und menschenähnliche Aufgaben auszuführen. Einige Hauptkomponenten sind:</p>
+                    <ul>
+                        <li>Maschinelles Lernen</li>
+                        <li>Neuronale Netze</li>
+                        <li>Deep Learning</li>
+                        <li>Natürliche Sprachverarbeitung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    Anwendungsbereiche von KI
+                    <span class="accordion-icon">&#9660;</span>
+                </button>
+                <div class="accordion-content">
+                    <p>KI wird in vielen Bereichen eingesetzt, darunter:</p>
+                    <ul>
+                        <li>Gesundheitswesen (Diagnose, Medikamentenentwicklung)</li>
+                        <li>Finanzen (Betrugserkennung, Algorithmic Trading)</li>
+                        <li>Verkehr (Autonomes Fahren, Verkehrsoptimierung)</li>
+                        <li>Kundenservice (Chatbots, Personalisierung)</li>
+                        <li>Bildung (Adaptive Lernsysteme)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                button.classList.toggle('active');
+                
+                if (button.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                    button.setAttribute('aria-expanded', 'true');
+                } else {
+                    accordionContent.style.maxHeight = 0;
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
