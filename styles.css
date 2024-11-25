@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -45,6 +45,7 @@ main {
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .accordion {
@@ -55,6 +56,7 @@ main {
 
 .accordion-item {
     border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease-out;
 }
 
 .accordion-header {
@@ -82,11 +84,15 @@ main {
     padding: 0 1rem;
 }
 
+.accordion-header.active + .accordion-content {
+    max-height: 1000px;
+}
+
 .accordion-icon {
     transition: transform 0.3s ease;
 }
 
-.accordion-header[aria-expanded="true"] .accordion-icon {
+.accordion-header.active .accordion-icon {
     transform: rotate(180deg);
 }
 footer {
@@ -107,6 +113,35 @@ ul {
     padding-left: 1.5rem;
 }
 
+a {
+    transition: color 0.3s ease;
+}
+
+/* Custom animation for page transitions */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.5rem;
@@ -117,3 +152,4 @@ ul {
         margin-bottom: 0.5rem;
     }
 }
+
